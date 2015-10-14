@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JavaScript Test 2: Rock Paper Scissors</title>
+</head>
+<body>
+
+<h1>Rock, Paper, Scissors</h1>
+<script>
+
+var userChoice = prompt("Do you choose rock,paper,scissors, lizard or Spock?");
+
+var computerChoice = Math.random();
+
+if (computerChoice < 0.2) {
+	computerChoice = "rock";
+} else if((computerChoice < 0.4)&&(computerChoice > 0.2)) {
+	computerChoice = "paper";
+} else if((computerChoice > 0.4)&&(computerChoice < 0.6)){
+	computerChoice = "scissors";
+}else if((computerChoice > 0.6)&&(computerChoice < 0.8)){
+computerChoice = "spock";
+}
+else {
+computerChoice = "lizard";
+}
+/*creates a variable called computerChoice from random numbers. 1 is diveded by 5 and split up into five 
+possible choices.
+*/
+
+console.log("Computer: " + computerChoice);
+var compare = function(choice1, choice2){
+    if(choice1 === choice2){
+        return "the result is a tie!";
+    }
+    //returns the result as a tie
+    
+    else if(choice1 === "rock"){
+        if(choice2 === "scissors"){
+            return "rock wins";
+        }
+            else if(choice2 === "paper"){
+                return "paper wins";
+            }
+    		else if(choice2 === "spock"){
+            return "spock wins";
+            }
+        else {
+        return "rock wins";
+        }
+    }
+    // returns an answer for the userChoice, choice1 is Rock
+    else if(choice1 === "paper"){
+    if(choice2 === "rock"){
+     return "paper wins";   
+     }
+        else if(choice2 === "scissors"){
+             return "scissors wins";
+    }
+        else if(choice2 === "spock"){
+        return "paper wins";
+        }
+        else {
+        return "lizard wins";
+        }
+
+    }//return an answer when the userChoice or choice1 is paper
+    
+    else if(choice1 === "scissors"){
+    if(choice2 === "rock"){
+    return "rock wins";
+    }
+    else if (choice2 ==="paper"){
+    return "scissors wins";
+    }
+      else if(choice2 ==="spock"){
+      return "spock wins";
+      }
+        else {
+        return "scissors wins";
+        }
+    }//return the answer when the userChoice, or choice1, is paper.
+
+
+    else if (choice2 === "lizard"){
+    if(choice2 === "rock"){
+    return "rock wins";
+}
+else if(choice2 === "paper"){
+   return "lizard wins";
+}
+else if(choice2 === "scissors"){
+    return "scissors wins";
+}
+else if(choice2 === "spock"){
+ return "lizard wins";
+}
+
+}
+else if(choice1 === "spock"){
+if(choice2 === "rock"){
+return "spock wins";
+}
+if(choice2 === "paper"){
+return "paper wins";
+}
+else if(choice2 === "scissors"){
+return "spock wins";
+}
+else if(choice2 === "lizard"){
+return "lizard wins";
+}
+}
+};
+console.log(compare(userChoice, computerChoice));
+
+var win = compare(userChoice, computerChoice);
+document.writeln("The computer chose " + computerChoice + ", ");
+document.write("\n");
+document.writeln(compare(userChoice, computerChoice));
+</script>
+</body>
+</html>
